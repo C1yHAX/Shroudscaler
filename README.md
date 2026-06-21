@@ -94,7 +94,11 @@ Then, in your Enshrouded game folder (next to `enshrouded.exe`):
    `shroudtopia.json`, `mods/`).
 2. **Replace** Shroudtopia's `winmm.dll` with Shroudscaler's `winmm.dll`
    ([latest Release](https://github.com/C1yHAX/Shroudscaler/releases)).
-3. Add **OptiScaler** (`OptiScaler.dll` + `OptiScaler.ini`) to the same folder.
+3. Copy the **entire contents of your OptiScaler download** into the same folder —
+   `OptiScaler.dll`, `OptiScaler.ini` and every library it ships with (FSR, XeSS,
+   frame-gen, fakenvapi…) including the `D3D12_Optiscaler` folder. **Keep
+   `OptiScaler.dll` named `OptiScaler.dll`** — don't run OptiScaler's own setup and
+   don't rename it; Shroudscaler loads it by that name.
 
 Leave `shroudtopia.dll`, `shroudtopia.json` and `mods/` untouched — Shroudscaler loads
 them by name.
@@ -102,13 +106,31 @@ them by name.
 ```text
 Enshrouded/
 ├─ enshrouded.exe
-├─ winmm.dll          ← Shroudscaler  (replaces Shroudtopia's winmm.dll)
-├─ shroudtopia.dll    ← Shroudtopia   (unchanged)
+├─ winmm.dll          ← Shroudscaler (replaces Shroudtopia's winmm.dll)
+│
+├─ shroudtopia.dll    ← Shroudtopia (unchanged)
 ├─ shroudtopia.json   ← Shroudtopia config (unchanged)
 ├─ mods/              ← your Shroudtopia mods (unchanged)
-├─ OptiScaler.dll     ← OptiScaler
-└─ OptiScaler.ini     ← OptiScaler config
+│
+├─ OptiScaler.dll     ← OptiScaler — keep this name!
+├─ OptiScaler.ini
+├─ amd_fidelityfx_dx12.dll
+├─ amd_fidelityfx_upscaler_dx12.dll
+├─ amd_fidelityfx_framegeneration_dx12.dll
+├─ amd_fidelityfx_vk.dll
+├─ libxess.dll
+├─ libxess_dx11.dll
+├─ libxess_fg.dll
+├─ libxell.dll
+├─ dlssg_to_fsr3_amd_is_better.dll
+├─ fakenvapi.dll
+├─ fakenvapi.ini
+└─ D3D12_Optiscaler/
+   └─ D3D12Core.dll
 ```
+
+> The exact OptiScaler files depend on its version (above is v0.9.3) — just copy
+> everything that comes in the OptiScaler download.
 
 ## 🛠️ Building
 
@@ -237,7 +259,10 @@ unberührt), lädt `shroudtopia.dll` (genau wie Shroudtopias eigene `winmm.dll`)
 zusätzlich `OptiScaler.dll`.
 
 **Installation:** Shroudtopia normal installieren → dessen `winmm.dll` durch die von
-Shroudscaler **ersetzen** → `OptiScaler.dll` + `OptiScaler.ini` dazulegen.
+Shroudscaler **ersetzen** → den **kompletten Inhalt des OptiScaler-Downloads**
+dazulegen (`OptiScaler.dll`, `OptiScaler.ini`, alle FSR-/XeSS-/Frame-Gen-Libs,
+`fakenvapi`, plus den Ordner `D3D12_Optiscaler`). `OptiScaler.dll` dabei **nicht**
+umbenennen — Shroudscaler lädt sie unter diesem Namen.
 `shroudtopia.dll`, `shroudtopia.json` und `mods/` bleiben unverändert.
 
 **Bauen:** `cd src && x86_64-w64-mingw32-g++ -O2 -s -shared -static -static-libgcc -static-libstdc++ -o winmm.dll thunks.S main.cpp winmm.def -lkernel32` — oder `msvc/winmm.sln` in Visual Studio (`Release | x64`).
