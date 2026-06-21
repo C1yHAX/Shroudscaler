@@ -4,10 +4,10 @@
 
 <h3>One <code>winmm.dll</code> that runs <a href="https://github.com/s0t7x/shroudtopia">Shroudtopia</a> <b>and</b> <a href="https://github.com/optiscaler/OptiScaler">OptiScaler</a> together in <a href="https://enshrouded.com">Enshrouded</a>.</h3>
 
-<!-- Replace OWNER/REPO with your GitHub path -->
-[![Build](https://github.com/C1yHAX/Shroudscaler/actions/workflows/build.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/build.yml)
-[![Release](https://img.shields.io/github/v/release/OWNER/REPO?color=7b6cff)](https://github.com/OWNER/REPO/releases)
-[![Downloads](https://img.shields.io/github/downloads/OWNER/REPO/total?color=21d4b4)](https://github.com/OWNER/REPO/releases)
+<!-- Replace C1yHAX/Shroudscaler with your GitHub path -->
+[![Build](https://github.com/C1yHAX/Shroudscaler/actions/workflows/build.yml/badge.svg)](https://github.com/C1yHAX/Shroudscaler/actions/workflows/build.yml)
+[![Release](https://img.shields.io/github/v/release/C1yHAX/Shroudscaler?color=7b6cff)](https://github.com/C1yHAX/Shroudscaler/releases)
+[![Downloads](https://img.shields.io/github/downloads/C1yHAX/Shroudscaler/total?color=21d4b4)](https://github.com/C1yHAX/Shroudscaler/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
 ![Platform](https://img.shields.io/badge/platform-Windows%20x64-0078D6)
 ![Game](https://img.shields.io/badge/game-Enshrouded-7c3aed)
@@ -93,7 +93,7 @@ Then, in your Enshrouded game folder (next to `enshrouded.exe`):
 1. Install **Shroudtopia** normally (gives you `winmm.dll`, `shroudtopia.dll`,
    `shroudtopia.json`, `mods/`).
 2. **Replace** Shroudtopia's `winmm.dll` with Shroudscaler's `winmm.dll`
-   ([latest Release](https://github.com/OWNER/REPO/releases)).
+   ([latest Release](https://github.com/C1yHAX/Shroudscaler/releases)).
 3. Add **OptiScaler** (`OptiScaler.dll` + `OptiScaler.ini`) to the same folder.
 
 Leave `shroudtopia.dll`, `shroudtopia.json` and `mods/` untouched — Shroudscaler loads
