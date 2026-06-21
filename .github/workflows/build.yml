@@ -1,0 +1,41 @@
+name: build
+
+on:
+  push:
+    branches: [ "main", "master" ]
+    tags: [ "v*" ]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Install MinGW-w64
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 binutils-mingw-w64-x86-64
+
+      - name: Build winmm.dll
+        run: |
+          cd src
+          x86_64-w64-mingw32-g++ -O2 -s -shared -static -static-libgcc -static-libstdc++ \
+            -o winmm.dll thunks.S main.cpp winmm.def -lkernel32
+          ls -l winmm.dll
+
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: winmm.dll
+          path: src/winmm.dll
+
+      - name: Attach to release (on tag)
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: src/winmm.dll

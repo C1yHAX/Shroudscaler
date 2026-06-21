@@ -1,0 +1,14 @@
+# build output
+*.dll
+*.o
+*.obj
+*.exp
+*.lib
+*.pdb
+*.ilk
+# VS / build dirs
+.vs/
+x64/
+Debug/
+Release/
+build/
