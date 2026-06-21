@@ -5,7 +5,7 @@
 <h3>One <code>winmm.dll</code> that runs <a href="https://github.com/s0t7x/shroudtopia">Shroudtopia</a> <b>and</b> <a href="https://github.com/optiscaler/OptiScaler">OptiScaler</a> together in <a href="https://enshrouded.com">Enshrouded</a>.</h3>
 
 <!-- Replace OWNER/REPO with your GitHub path -->
-[![Build](https://github.com/OWNER/REPO/actions/workflows/build.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/build.yml)
+[![Build](https://github.com/C1yHAX/Shroudscaler/actions/workflows/build.yml/badge.svg)](https://github.com/OWNER/REPO/actions/workflows/build.yml)
 [![Release](https://img.shields.io/github/v/release/OWNER/REPO?color=7b6cff)](https://github.com/OWNER/REPO/releases)
 [![Downloads](https://img.shields.io/github/downloads/OWNER/REPO/total?color=21d4b4)](https://github.com/OWNER/REPO/releases)
 [![License](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
